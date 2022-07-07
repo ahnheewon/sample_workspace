@@ -9,13 +9,25 @@ public class MethodExample01 {
 //		showInfo("홍길동", 24);
 //	printStar(4,"*");
 		printGuguda(13);
+		
+		gugudan();
 	}
 
 	// 메소드 정의 구문.
 	public static long sum(int num) { // parameter
 		int result = num * 2;
-		return result; // 자동형변환(promotion)
+		return result; // 자동형변환(promotion)\
+		
 
+	}
+
+	public static void gugudan() {
+		for (int i = 1; i <= 9; i++) {
+			for (int j = 2; j <= 9; j++) {
+				System.out.printf("%2d x%2d = %2d ", j, i, j * i);
+			}
+			System.out.println();
+		}
 	}
 
 	public static void printGuguda(int a) {
