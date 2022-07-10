@@ -6,6 +6,8 @@ public class EmployeeListApp {
 
 	public static void main(String[] args) {
 		EmployeeList app = EmployeeArray.getInstance();
+		
+		app = new EmployeeArrayList(); // 인터페이스 변경!!!!
 		Scanner scn = new Scanner(System.in);
 
 		while (true) {

@@ -57,7 +57,7 @@ public class EmployeeArray implements EmployeeList {
 	@Override
 	public void printList() {
 		for(int i=0; i < empNum; i++) {
-			System.out.printf("%5d %10s %7d/n",list[i].getEmployeeId(),list[i].getName(),list[i].getSalary());
+			System.out.printf("%5d %10s %7d\n",list[i].getEmployeeId(),list[i].getName(),list[i].getSalary());
 		}
 		
 	}
