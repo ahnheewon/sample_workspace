@@ -16,12 +16,14 @@ public class BoardApp {
 			System.out.println("\n<1. 목록  2. 등록  3.조회(작성자)  4. 삭제  5. 종료 > ");
 			System.out.print("\n번호 선택> ");
 			int selectNo = Integer.parseInt(scn.nextLine());
-			
+
 			if (selectNo == 1) {
-				List<Board> a = new ArrayList<>();
-			
-			System.out.println(a);
-			
+				List<Board> list = app.boardList();
+
+				for (Board a : list) {
+					System.out.println(a);
+				}
+
 			} else if (selectNo == 2) {
 
 				System.out.print("제목> ");
@@ -37,9 +39,12 @@ public class BoardApp {
 			} else if (selectNo == 3) {
 				System.out.print("조회하고 싶은 작성자를 입력하세요 > ");
 				String writer = scn.nextLine();
-				search(writer);
-			
-				
+
+				List<Board> list = app.search(writer);
+				for (Board a : list) {
+					System.out.println(a);
+				}
+
 			} else if (selectNo == 4) {
 
 			}
@@ -52,8 +57,4 @@ public class BoardApp {
 		}
 	}
 
-	private static void search(String writer) {
-		// TODO Auto-generated method stub
-		
-	}
 }
