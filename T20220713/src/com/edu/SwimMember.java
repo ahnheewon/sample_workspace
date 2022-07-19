@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class SwimMember extends Member {
+public class SwimMember extends Member { //Member의 속성 그대로 물려받음.
 	String Tname;
 	String score;
 	Scanner scn = new Scanner(System.in);
@@ -14,9 +14,9 @@ public class SwimMember extends Member {
 	// 정보출력시 => 강사이름: 홍길동, 등급: A
 
 	public SwimMember(int memberId, String memberName, String phone, String Tname, String score) {
-		super(memberId, memberName, phone);
+		super(memberId, memberName, phone); // 부모 것은 super로 생성자표현.
 		this.Tname = Tname;
-		this.score = score;
+		this.score = score; // 내 것은 this.
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class SwimMember extends Member {
 		this.score = score;
 	}
 
-	@Override
+	@Override //자식클래스에서 재정의
 	public String toString() {
 
 		return "회원 [회원ID :" + getMemberId() + ", 회원명 :" + getMemberName() + ", 연락처 :" + getPhone() + " 강사이름:" + Tname
