@@ -15,7 +15,7 @@ public class BankAccount {
 
 			if (menu == 1) {
 				System.out.println("입금 액을 입력하세요 >>> ");
-				int amt = scn.nextInt(); // 입글할 금액
+				int amt = scn.nextInt(); // 입금할 금액
 				{
 					if (valance + amt > 100000) {
 						System.out.println("최대 한도를 초과하였습니다. ");
