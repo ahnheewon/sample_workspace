@@ -33,18 +33,21 @@ public class LottoApp {
 				System.out.print("구매한 금액> " + money + "원\n");
 
 				for (int i = 0; i < chance; i++) {
-					randomNum = (int) (Math.random() * 45) + 1;
+					lotto[i] = (int) (Math.random() * 45) + 1;
 
 					if (i > 0 && i % 5 == 0)
 						System.out.print("\n======================");
 					System.out.print("\n" + (i + 1) + "번>");
-
+					
+					{if(i>0) 
 					for (int j = 0; j < lotto.length; j++) {
-
-						lotto[j] = (int) (Math.random() * 45) + 1;
-
-						System.out.print(lotto[j] + " ");
-					}
+						if(lotto[j] == lotto[i]) {
+						i--;
+						break;
+						}else System.out.print(lotto[j]);
+						}}
+					
+					
 
 				}
 
