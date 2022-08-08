@@ -35,8 +35,8 @@ public class MemberService {
 	// 로그아웃
 	public void doLogout() {
 
-		if (memberInfo != null)
-			memberInfo = null;
+		if(memberInfo != null)
+			memberInfo =null;
 
 	}
 
@@ -54,6 +54,7 @@ public class MemberService {
 		member.setMemberId(id);
 		member.setMemberPw(pw);
 		member.setMemberName(name);
+		//role == 0, 일반 사용자
 		member.setRole("0");
 
 		int result = MemberManage.getInstance().registCustomer(member);

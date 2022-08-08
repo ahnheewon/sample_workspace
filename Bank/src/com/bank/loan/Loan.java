@@ -11,10 +11,26 @@ public class Loan {
 	
 	private String loanId;
 	private String memberId;
-	private Date loanDate;
+	private String loanDate;
 	private String state;
+	private int loanMoney;
+	private String memberName;
 	
 	
+	
+	
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+	public int getLoanMoney() {
+		return loanMoney;
+	}
+	public void setLoanMoney(int loanMoney) {
+		this.loanMoney = loanMoney;
+	}
 	public String getLoanId() {
 		return loanId;
 	}
@@ -27,10 +43,10 @@ public class Loan {
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
-	public Date getLoanDate() {
+	public String getLoanDate() {
 		return loanDate;
 	}
-	public void setLoanDate(Date loanDate) {
+	public void setLoanDate(String loanDate) {
 		this.loanDate = loanDate;
 	}
 	public String getState() {

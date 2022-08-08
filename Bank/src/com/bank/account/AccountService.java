@@ -1,6 +1,9 @@
 package com.bank.account;
 
+import java.util.List;
 import java.util.Scanner;
+
+import com.bank.member.MemberService;
 
 public class AccountService {
 
@@ -20,7 +23,15 @@ public class AccountService {
 
 		ac.setAccountId(accountId);
 		ac.setMemberId(customId);
-
+		
+		//계좌 등록 메소드
+		int result = AccountManage.getInstance().insertAccount(ac);
+		if(result==1) {
+			System.out.println("계좌 등록 완료");
+		} else {
+			System.out.println("계좌 등록 실패");
+		}
+		
 	}
 
 //입출금
@@ -98,6 +109,18 @@ public class AccountService {
 		int balance = Integer.parseInt(sc.nextLine());
 		
 		AccountManage.getInstance().transferMoney(toAccountId, fromAccountId, balance);
+		
+	}
+	
+	public void getAccount() {
+		List<Account> list = AccountManage.getInstance().getAccountList(MemberService.memberInfo.getMemberId());
+		System.out.println(MemberService.memberInfo.getMemberName()+"님의 계좌 정보>>");
+		for(Account account : list) {
+			System.out.println("계좌 ID> "+account.getAccountId());
+			System.out.println("잔고 >"+account.getBalance());
+			System.out.println("생성일 >"+account.getCredate());
+			
+		}
 		
 	}
 
