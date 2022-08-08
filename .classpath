@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="assignment/src"/>
+	<classpathentry kind="src" path="HelloWorld/src"/>
+	<classpathentry kind="src" path="P20220704/src"/>
+	<classpathentry excluding="src/" kind="src" path="P20220705"/>
+	<classpathentry kind="src" path="P20220705/src"/>
+	<classpathentry kind="src" path="P20220706/src"/>
+	<classpathentry kind="src" path="P20220707/src"/>
+	<classpathentry kind="src" path="P20220708/src"/>
+	<classpathentry kind="src" path="P20220711/src"/>
+	<classpathentry kind="src" path="P20220804/src"/>
+	<classpathentry kind="src" path="P220803/src"/>
+	<classpathentry kind="src" path="T20220713/src"/>
+	<classpathentry kind="src" path="T20220719R/src"/>
+	<classpathentry kind="output" path="P20220704/bin"/>
+</classpath>

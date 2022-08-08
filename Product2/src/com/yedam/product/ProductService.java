@@ -16,25 +16,29 @@ public class ProductService {
 		}
 	}
 
-	//2. 메뉴 상세 조회
+	// 2. 메뉴 상세 조회
 	public void getDetailProduct() {
 		List<Product> list = ProductDAO.getInstance().getDetailProduct();
-		
+
 		System.out.println("메뉴 입력> ");
-		String menuName = sc.nextLine();	
-	//	menu.setMenuName(menuName);
-		
-		for(Product menu : list) {
-			System.out.println(" 메뉴 명: " +menu.getMenuName());
-			System.out.println(" 메뉴 가격: " + menu.getMenuPrice());
-			System.out.println(" 메뉴 설명: " + menu.getMenuExplain());
-		}
-		}
+		String menuName = sc.nextLine();
 	
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getMenuName().equals(menuName)) {
+				System.out.println("메뉴 명 : " + list.get(i).getMenuName());
+			System.out.println("메뉴 가격 : " + list.get(i).getMenuPrice());
+			System.out.println("메뉴 설명 : " + list.get(i).getMenuExplain());
+				
+			}
+		
+		}
+		
+		
+	}
 
 //3.메뉴 등록
-	public void insertProduct() {
-		Product product = new Product();
+	public void insertProduct() { 
+		Product menu = new Product();
 		System.out.println("메뉴 입력> ");
 		String menuName = sc.nextLine();
 
@@ -44,35 +48,34 @@ public class ProductService {
 		System.out.println("설명 입력> ");
 		String menuExplain = sc.nextLine();
 
-		product.setMenuName(menuName);
-		product.setMenuPrice(menuPrice);
-		product.setMenuExplain(menuExplain);
+		menu.setMenuName(menuName);
+		menu.setMenuPrice(menuPrice);
+		menu.setMenuExplain(menuExplain);
 
-
-		int result = ProductDAO.getInstance().insertProduct(product);
+		
+		int result = ProductDAO.getInstance().insertProduct(menu);
 		if (result == 1) {
 			System.out.println("메뉴 등록 완료");
 		} else
 			System.out.println("등록 실패");
 
 	}
-	
-	//3.판매 등록
-		public void salesMenu() {
-			Product menu = new Product();
-			System.out.println("메뉴 입력> ");
-			String menuName = sc.nextLine();
 
-			menu.setMenuName(menuName);
-			int sum =menu.getMenuSales();
-			sum=sum+1;
-			menu.setMenuSales(sum);
-	
-				System.out.println("판매량 완료");
-	
+	// 3.판매 등록
+	public void salesMenu() {
+		Product menu = new Product();
+		System.out.println("메뉴 입력> ");
+		String menuName = sc.nextLine();
 
-		}
-	
+		menu.setMenuName(menuName);
+		int sum = menu.getMenuSales();
+		sum = sum + 1;
+		menu.setMenuSales(sum);
+
+		System.out.println("판매량 완료");
+
+	}
+
 // 메뉴 삭제
 	public void deleteProduct() {
 		System.out.println("메뉴 입력>");
@@ -85,21 +88,19 @@ public class ProductService {
 			System.out.println("삭제 실패");
 
 	}
-	
-
 
 // 2-6) 상품 별 판매 갯수 출력 + 판매 금액
 	// 모든 데이터 loading
 	// 가져온 데이터를 자바에서 가공해서 출력
 	public void calProduct() {
-		List<Product> list = ProductDAO.getInstance().getDetailProduct2();
+		List<Product> list = ProductDAO.getInstance().getDetailProduct();
 		int sum = 0;
 		for (Product product : list) {// 하나씩 꺼내서 들어감.
-			System.out.print("메뉴 : " + product.getMenuName()  );
-			System.out.print(", 판매 갯수 :" + product.getMenuSales()+" 개");
-			System.out.println(", 판매 금액 :" + (product.getMenuPrice() * product.getMenuSales()) );
-			sum += (product.getMenuPrice()*product.getMenuSales());
+			System.out.print("메뉴 : " + product.getMenuName());
+			System.out.print(", 판매 갯수 :" + product.getMenuSales() + " 개");
+			System.out.println(", 판매 금액 :" + (product.getMenuPrice() * product.getMenuSales()));
+			sum += (product.getMenuPrice() * product.getMenuSales());
 		}
-		System.out.println("총 판매 금액> "+sum+"원 입니다.");
+		System.out.println("총 판매 금액> " + sum + "원 입니다.");
 	}
 }

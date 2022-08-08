@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yedam.common.DAO;
-
+////////////////////////////////////////////////////////DB와 연결할 수 있는 기능이 담긴 DAO를 상속받음.
 public class MemberManagement extends DAO {
-//싱글톤 생성
+//싱글톤 static 생성
 
 	private static MemberManagement mm = null;
 
